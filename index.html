@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokédex - API Pokémon</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<div id="app" v-cloak>
+    <div class="header">
+        <h1 class="header-title">Pokédex 2024</h1>
+    </div>
+    <div class="separator"> 
+        <div class="pokemon-container">
+            <ul>
+                <li v-for="pokemon in pokemons" :key="pokemon.id">
+                    <div class="pokemon-card" @click="toggleDetails(pokemon)">
+                        <div class="card-inner" :class="{ 'show-details': pokemon.showDetails }">
+                            <div class="card-back">
+                                <p class="pokemon-name" :class="pokemon.types[0].type.name">{{pokemon.name.toUpperCase()}}</p>
+                                <img :src="pokemon.sprite.front_default" alt="pokemon-image">
+                                <div class="pokemon-name-wrapper">
+        
+                                </div>
+                            </div>
+                            <div class="card-front">
+                                <div class="details">
+                                    <p>Tipo: {{pokemon.types[0].type.name}}</p>
+                                    <p>Peso: {{pokemon.weight}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div v-if="loading" >Loading... </div>
+</div>
+</body>
+</html>
+
+<script src="index.js"></script>
