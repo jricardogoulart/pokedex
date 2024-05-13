@@ -18,7 +18,7 @@
                     <div class="pokemon-card" @click="toggleDetails(pokemon)">
                         <div class="card-inner" :class="{ 'show-details': pokemon.showDetails }">
                             <div class="card-back">
-                                <p class="pokemon-name" :class="pokemon.types[0].type.name">{{pokemon.name.toUpperCase()}}</p>
+                                <p class="pokemon-name" :class="pokemon.types[0].type.name" id="pad">{{pokemon.name.toUpperCase()}}</p>
                                 <img :src="pokemon.sprite.front_default" alt="pokemon-image">
                                 <div class="pokemon-name-wrapper">
         
@@ -26,8 +26,10 @@
                             </div>
                             <div class="card-front">
                                 <div class="details">
-                                    <p>Tipo: {{pokemon.types[0].type.name}}</p>
-                                    <p>Peso: {{pokemon.weight}}</p>
+                                    <p class="pokemon-name verse" :class="pokemon.types[0].type.name" id="pad"> Descrição do {{pokemon.name.toUpperCase()}}</p>
+                                    <p><span class="desc-title">Tipo:</span> {{pokemon.types[0].type.name}}</p>
+                                    <p><span class="desc-title">Peso:</span> {{pokemon.weight}}</p>
+                                    <p><span class="desc-title">Habilidades:</span> {{ pokemon.abilities.join(', ') }}</p>
                                 </div>
                             </div>
                         </div>

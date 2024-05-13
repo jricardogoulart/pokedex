@@ -44,7 +44,8 @@ createApp({
                     weight: data.weight,
                     types: data.types,
                     sprite: data.sprites,
-                    showDetails: true,
+                    abilities: data.abilities.map(ability => ability.ability.name),  // Coleta apenas os nomes das habilidades
+                    showDetails: true
                 }
             } catch (error) {
                 console.error(error)

@@ -1,25 +1,20 @@
 /* Importe a fonte Press Start 2P */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
 
-/* Importe a fonte SF Pro Display */
-@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;700&display=swap');
-
-
-*{
+* {
     margin: 0;
     padding: 0;
-    
 }
-.header,
-.pokemon-name {
-    font-family: 'Press Start 2P', sans-serif;
-}
+
+
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'SF Pro Display', sans-serif;
     display: flex;
+    background-color: #f5f5f5;
     justify-content: center;
-
 }
 
 .header {
@@ -27,12 +22,30 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    height: fit-content;
     background-color: #393b39;
     color: #fff;
-    padding: 24px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 200;
 }
+
+.header-title {
+
+    text-align: center;
+    letter-spacing: 2px;
+    font-family: 'Pokemon Solid', sans-serif;
+    font-weight: 200;
+    font-size: 24px;
+    color: #fccf00;
+    text-shadow:
+        -2px -2px 0 #1d2c5e,
+        
+        -1px -1px 0 #3466af,
+        1px -1px 0 #3466af,
+        -1px 1px 0 #3466af,
+        1px 1px 0 #3466af;
+}
+
 
 .separator {
     margin-top: 32px;
@@ -52,20 +65,8 @@ body {
     background-color: #6c757d;
 }
 
-.header-title {
-    font-size: 24px;
-    text-align: center;
-    letter-spacing: 2px;
-}
-
 [v-cloak] {
     display: none;
-}
-
-body {
-    font-family: "Comic Sans MS";
-    background-color: #f5f5f5;
-    margin: 0;
 }
 
 ul {
@@ -91,6 +92,8 @@ li {
     text-align: center;
     display: flex;
     justify-content: center;
+    transition: 2s ease;
+    animation: type-gradient 2s ease-in-out infinite;
 }
 
 .pokemon-container {
@@ -110,97 +113,53 @@ li {
     display: inline-block;
     color: #161616;
     letter-spacing: 1px;
+    font-family: 'Press Start 2P', sans-serif;
 }
 
-@keyframes briga-gradient {
+.desc-title{
+    text-transform: capitalize;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: larger;
+}
+
+@keyframes type-gradient {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
 }
 
-.fire {
-    background-color: #ff4500;
-}
-
-.grass {
-    background-color: #4caf50;
-}
-
-.water {
-    background-color: #1e90ff;
-}
-
-.bug {
-    background-color: #98741e;
-}
-
-.normal {
-    background-color: #a9a9a9;
-}
-
-.poison {
-    background-color: #9e5cda;
-}
-
-.electric {
-    background-color: #daa520;
-}
-
-.ground {
-    background-color: #6b2f1b;
-    color: #fff;
-}
-
-.fairy {
-    background-color: #c9056e;
-}
-
-.fighting {
-    background-color: rgba(255, 7, 65, 0.97);
-}
-
-.ice {
-    background-color: #a9ccf1;
-}
-
-.rock {
-    background-color: #a0522d;
-}
-
-.ghost {
-    background-color: #4b0f80;
-    color: #fff;
-}
-
-.dragon {
-    background-color: mediumseagreen;
-}
-
-.dark {
-    background-color: #333333;
-    color: #fff;
-}
-
-.steel {
-    background-color: #555555;
-    color: #fff;
-}
-
-.flying {
-    background-color: #12cbc4;
-}
-
-.psychic {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+#pad {
     background-size: 400% 400%;
-    animation: briga-gradient 4s ease infinite;
+    animation: type-gradient 2s ease-in-out infinite;
 }
+
+.fire { background: linear-gradient(-45deg, #ff4500, #ff6347, #ff7f50, #ff4500);}
+.grass {  background: linear-gradient(-45deg, #3e8e41, #4eff21, #5cb85c);}
+.water {background: linear-gradient(-45deg, #0d8eff, #0ec4d1, #57a7ec);}
+.bug { background: linear-gradient(-45deg, #806c1e, #98741e, #b08a2e);}
+.normal { background: linear-gradient(-45deg, #989898, #a9a9a9, #bcbcbc);}
+.poison {background: linear-gradient(-45deg, #8a48b8, #540c97, #b370ff);color: #fff;}
+.electric { background: linear-gradient(-45deg, #c8a620, #daa520, #ecb530);}
+.ground { background: linear-gradient(-45deg, #553013, #6b2f1b, #7d3e23); color: #fff;}
+.fairy { background: linear-gradient(-45deg, #b3055e, #c9056e, #de057e);}
+.fighting {background: linear-gradient(-45deg, #e3003b, #ff0741, #ff2755);}
+.ice {background: linear-gradient(-45deg, #98b9e1, #a9ccf1, #bae0ff);}
+.rock {background: linear-gradient(-45deg, #8c4622, #a0522d, #b4603b);}
+.ghost {background: linear-gradient(-45deg, #360b66, #4b0f80, #60209b);color: #fff;}
+.dragon {background: linear-gradient(-45deg, #2e8b57, #3cb371, #48cc85);}
+.dark {background: linear-gradient(-45deg, #292929, #333333, #3d3d3d);color: #fff;}
+.steel {background: linear-gradient(-45deg, #494949, #555555, #616161);color: #fff;}
+.flying {background: linear-gradient(-45deg, #00ada9, #12cbc4, #24e8df);}
+.psychic { background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);}
 
 .pokemon-card {
     width: 240px;
